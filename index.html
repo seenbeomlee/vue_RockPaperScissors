@@ -86,22 +86,22 @@
                 <div class="row">
                     <div class="small-8 small-offset-2 columns text-center">
                         <!-- it will select only 1 at same time because we setted v-model with same variable -->
-                        <label class="radio-label"><input type="radio" v-model="myChoice" value="scissor"> 가위</label>
-                        <label class="radio-label"><input type="radio" v-model="myChoice" value="rock"> 바위</label>
-                        <label class="radio-label"><input type="radio" v-model="myChoice" value="paper"> 보</label>
+                        <label class="radio-label"><input type="radio" v-model="myChoice" value="scissor"> scissor</label>
+                        <label class="radio-label"><input type="radio" v-model="myChoice" value="rock"> rock</label>
+                        <label class="radio-label"><input type="radio" v-model="myChoice" value="paper"> paper</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="small-12 columns">
                         <div class="text-center" v-if="isSelectable">
-                            <button class="start-btn" @click="startGame()">선택 완료!</button>
+                            <button class="start-btn" @click="startGame()">select complete!</button>
                         </div>
-                        <div v-else class="loading"> 기다리는 중...</div>
+                        <div v-else class="loading"> waiting...</div>
                     </div>
                 </div>
             </div>
             <div class="small-6 columns text-center">
-                <p>생각 중...</p>
+                <p>thinking...</p>
             </div>
         </div>
 

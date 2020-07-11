@@ -48,7 +48,33 @@ new Vue({
                 /* this.logs.push(log) */
                 this.logs.unshift(log)
             }
-        }
+        },
+        lifeOfMe: function(newVal) {
+            if(newVal === 0) {
+                setTimeout(() => {
+                    confirm('You lose!')
+                    this.lifeOfMe = 3
+                    this.lifeOfCom = 3
+                    this.myChoice = null
+                    this.comChoice = null
+                    this.winner = null
+                    this.logs = []
+                }, 300)
+            }
+        },
+        lifeOfCom: function(newVal) {
+            if(newVal === 0) {
+                setTimeout(() => {
+                    confirm('You win!')
+                    this.lifeOfMe = 3
+                    this.lifeOfCom = 3
+                    this.myChoice = null
+                    this.comChoice = null
+                    this.winner = null
+                    this.logs = []
+                }, 300)
+            }
+        },
     },
     methods: {
         startGame: function () {
