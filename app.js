@@ -3,7 +3,11 @@ new Vue({
     data: {
         myChoice: null,
         comChoice: null,
-        count: 3
+        count: 3,
+        winner : null,
+        lifeOfMe: 3,
+        lifeOfCom: 3,
+
     },
     watch: {
         /* watch count variable */
@@ -18,6 +22,23 @@ new Vue({
                     this.comChoice = 'paper'
                 }
                 // 0.33 0.66 alpha
+                
+                // who is winner
+                if(this.myChoice === this.comChoice) this.winnet == 'no one'
+                else if(this.myChoice === 'rock' && this.comChoice === 'scissor') this.winner = 'me'
+                else if(this.myChoice === 'rock' && this.comChoice === 'paper') this.winner = 'com'
+                else if(this.myChoice === 'scissor' && this.comChoice === 'paper') this.winner = 'me'
+                else if(this.myChoice === 'scissor' && this.comChoice === 'rock') this.winner = 'com'
+                else if(this.myChoice === 'paper' && this.comChoice === 'rock') this.winner = 'me'
+                else if(this.myChoice === 'paper' && this.comChoice === 'scissor') this.winner = 'com'
+                else this.winner = 'error'
+
+                // decrease life
+                if(this.winner === 'me') {
+                    this.lifeOfCom --
+                } else if (this.winner === 'com') {
+                    this.lifeOfMe --
+                }
             }
         }
     },
