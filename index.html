@@ -30,7 +30,18 @@
                 <h1 style="font-size:100px;"><strong>{{ count }}</strong></h1>
             </div>
             <div class="small-5 columns text-center">
-                <img src="images/question.jpg" alt="" class="text-center">
+                <img
+                    v-if="comChoice !== null"
+                    v-bind:src="'images/' + comChoice + '.jpg'" 
+                    alt="" 
+                    class="text-center"
+                >
+                <img
+                    v-else
+                    src="images/question.jpg" 
+                    alt="" 
+                    class="text-center"
+                >
                 <h1 class="text-center"><strong>Computer</strong></h1>
             </div>
         </div>

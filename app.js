@@ -2,7 +2,24 @@ new Vue({
     el: '#app',
     data: {
         myChoice: null,
+        comChoice: null,
         count: 3
+    },
+    watch: {
+        /* watch count variable */
+        count: function (newVal) {
+            if(newVal === 0) {
+                let number = Math.random()
+                if(number < 0.33) {
+                    this.comChoice = 'rock'
+                } else if (number < 0.66) {
+                    this.comChoice = 'scissor'
+                } else {
+                    this.comChoice = 'paper'
+                }
+                // 0.33 0.66 alpha
+            }
+        }
     },
     methods: {
         startGame: function () {
