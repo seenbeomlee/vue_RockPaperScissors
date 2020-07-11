@@ -7,7 +7,8 @@ new Vue({
         winner : null,
         lifeOfMe: 3,
         lifeOfCom: 3,
-
+        isSelectable: true,
+        logs: []
     },
     watch: {
         /* watch count variable */
@@ -39,11 +40,20 @@ new Vue({
                 } else if (this.winner === 'com') {
                     this.lifeOfMe --
                 }
+                // can see btn
+                this.isSelectable = true
+                this.count = 3
+
+                let log = `You: ${this.myChoice}, Computer: ${this.comChoice}`
+                /* this.logs.push(log) */
+                this.logs.unshift(log)
             }
         }
     },
     methods: {
         startGame: function () {
+            // cant see btn
+            this.isSelectable = false
             if(this.myChoice == null) {
                 alert('you should select one of rock - scissor - paper ')
             } else {
